@@ -5,10 +5,13 @@ import App from './App'
 import router from './router'
 import fastClike from 'fastclick'
 
+// 简写路径，在webpack 里配置了 styles 路径别名
 // 修改默认html标签样式
-import './assets/styles/reset.css'
+import 'styles/reset.css'
 // 解决多倍屏，1像素边框显示多像素
-import './assets/styles/border.css'
+import 'styles/border.css'
+// iconfont
+import 'styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClike.attach(document.body)

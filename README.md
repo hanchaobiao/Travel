@@ -23,3 +23,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 解决移动端点击事件300ms延迟问题
 npm install fastclick --save
 
+npm install stylus --save
+npm install stylus-loader --save
+
+
+
