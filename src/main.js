@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import fastClike from 'fastclick'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+import 'swiper/dist/css/swiper.css'
 
 // 简写路径，在webpack 里配置了 styles 路径别名
 // 修改默认html标签样式
@@ -15,6 +18,8 @@ import 'styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClike.attach(document.body)
+
+Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
 new Vue({

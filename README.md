@@ -26,5 +26,6 @@ npm install fastclick --save
 npm install stylus --save
 npm install stylus-loader --save
 
-
+# 轮播组件 https://github.com/surmon-china/vue-awesome-swiper
+npm install vue-awesome-swiper --save
 
