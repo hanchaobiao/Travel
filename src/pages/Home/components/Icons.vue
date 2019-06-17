@@ -67,7 +67,7 @@ export default {
           desc: '怀北漂流'
         },
         {
-          id: '0008',
+          id: '0009',
           imgUrl: 'http://img1.qunarzz.com/piao/fusion/1805/3a/754b47f658e9c602.png',
           desc: '怀北漂流'
         }
@@ -92,6 +92,7 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
+  @import '~styles/mixins.styl'
   .icons >>> swiper-container
     overflow: hidden
     width: 100%
@@ -126,4 +127,5 @@ export default {
       line-height: .44rem
       text-align: center
       color: $darkTextColor
+      ellipsis()
 </style>
