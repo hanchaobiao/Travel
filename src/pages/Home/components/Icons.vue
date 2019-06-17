@@ -1,15 +1,22 @@
 <template>
-  <div class="icons">
-    <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
-      <swiper-slide v-for="(page, index) in pages" :key="index">
-       <div class="icon" v-for="item of page" :key="item.id">
-         <div class="icon-img">
-          <img class="icon-image-content" :src="item.imgUrl">
+  <div>
+    <div class="icons">
+      <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+        <swiper-slide v-for="(page, index) in pages" :key="index">
+         <div class="icon" v-for="item of page" :key="item.id">
+           <div class="icon-img">
+            <img class="icon-image-content" :src="item.imgUrl">
+           </div>
+           <p class="icon-desc">{{item.desc}}</p>
          </div>
-         <p class="icon-desc">{{item.desc}}</p>
-       </div>
-      </swiper-slide>
-    </swiper>
+        </swiper-slide>
+        <div class="swiper-pagination"  slot="pagination"></div>
+      </swiper>
+    </div>
+    <ul class="mp-list-icon">
+      <li class="item-icon"><span class="iconfont icon-svg">&#xe61b;</span>定位信息</li>
+      <li class="item-icon"><span class="iconfont icon-svg">&#xe642;</span>必游榜单</li>
+    </ul>
   </div>
 </template>
 
@@ -93,39 +100,60 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   @import '~styles/mixins.styl'
-  .icons >>> swiper-container
+  .icons >>> .swiper-container
     overflow: hidden
     width: 100%
     height: 0
     padding-bottom: 50%
-  .icon
-    overflow: hidden
-    height: 0
-    position: relative
-    float: left
-    width: 25%
-    padding-bottom: 25%
-    .icon-img
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: .44rem
-      box-sizing: border-box
-      padding: .1rem
-      // 预留出文字的高度
-      .icon-image-content
-        display: block
-        height: 100%
-        margin: 0 auto
-    .icon-desc
-      position: absolute
-      left: 0
-      right: 0
-      bottom: 0
-      height: .44rem
-      line-height: .44rem
+  .icons >>> .swiper-pagination-bullets
+    height: .2rem
+    padding: .12rem
+    bottom: .04rem
+  .icons
+    margin-top: 0.1rem
+    .icon
+      overflow: hidden
+      height: 0
+      position: relative
+      float: left
+      width: 25%
+      padding-bottom: 22%
+      .icon-img
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: .44rem
+        box-sizing: border-box
+        padding: .1rem
+        // 预留出文字的高度
+        .icon-image-content
+          display: block
+          height: 100%
+          margin: 0 auto
+      .icon-desc
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        height: .44rem
+        line-height: .44rem
+        text-align: center
+        color: $darkTextColor
+        ellipsis()
+  .mp-list-icon
+    height: .1rem
+    border-top: .01rem solid #eee
+    height: 1rem
+    .item-icon:first-child
+      border-right: .02rem solid #eee
+    .item-icon
+      float: left
+      list-style: none
+      line-height: 1rem
+      box-sizing: border-box  // 改变盒模型，计算宽高时加上border
+      width: 50%
       text-align: center
-      color: $darkTextColor
-      ellipsis()
+      .icon-svg
+        padding-right: .1rem
 </style>
