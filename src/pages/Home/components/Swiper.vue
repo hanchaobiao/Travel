@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper">
-  <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
-    <swiper-slide v-for="(item, index) in banners" :key="index">
-      <img class="swiper-img"  :src="item"/>
-    </swiper-slide>
-    <div class="swiper-pagination"  slot="pagination"></div>
-  </swiper>
+    <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+      <swiper-slide v-for="(item, index) in banners" :key="index">
+        <img class="swiper-img"  :src="item"/>
+      </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
   </div>
 </template>
 
