@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="recommend-container">
     <div class="title">猜你喜欢</div>
-    <ul >
+    <ul>
       <li class="item border-bottom" v-for="(item, index) of recommendList" :key="item.id" :index="index">
         <img class="item-img" :src="item.imgUrl"/>
         <div class="item-info">
@@ -27,31 +27,31 @@ export default {
           desc: '世界五大宫之首，穿越与您近在咫尺'
         },
         {
-          id: '0001',
+          id: '0002',
           imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
           title: '故宫',
           desc: '世界五大宫之首，穿越与您近在咫尺'
         },
         {
-          id: '0001',
+          id: '0003',
           imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
           title: '故宫',
           desc: '世界五大宫之首，穿越与您近在咫尺'
         },
         {
-          id: '0001',
+          id: '0004',
           imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
           title: '故宫',
           desc: '世界五大宫之首，穿越与您近在咫尺'
         },
         {
-          id: '0001',
+          id: '0005',
           imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
           title: '故宫',
           desc: '世界五大宫之首，穿越与您近在咫尺'
         },
         {
-          id: '0001',
+          id: '0006',
           imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
           title: '故宫',
           desc: '世界五大宫之首，穿越与您近在咫尺'
@@ -64,6 +64,8 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl'
+  .recommend-container
+    background: #fff
   .title
     /*margin-top: .2rem*/
     line-height: .8rem
