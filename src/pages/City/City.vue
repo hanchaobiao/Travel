@@ -8,12 +8,13 @@
       </ul>
     </div>
     <city-search></city-search>
-    <city-list></city-list>
-    <city-alphabet></city-alphabet>
+    <city-list :hotCities="hotCities" :cities="cities"></city-list>
+    <city-alphabet :cities="cities"></city-alphabet>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
@@ -28,12 +29,27 @@ export default {
   },
   data () {
     return {
-      isActive: 1
+      isActive: 1,
+      hotCities: [],
+      cities: []
     }
+  },
+  mounted () {
+    this.getCityInfo()
   },
   methods: {
     cityType (index) {
       this.isActive = index
+    },
+    getCityInfo () {
+      const that = this
+      axios.get('/api/city.json').then(function (res) {
+        res = res.data
+        if (res.ret && res.data) {
+          that.hotCities = res.data.hotCities
+          that.cities = res.data.cities
+        }
+      })
     }
   }
 }
