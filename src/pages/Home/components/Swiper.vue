@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
-      <swiper-slide v-for="(item, index) in banners" :key="index">
-        <img class="swiper-img"  :src="item"/>
+      <swiper-slide v-for="item in swiperList" :key="item.id">
+        <img class="swiper-img"  :src="item.imgUrl"/>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
@@ -12,6 +12,7 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: ['swiperList'],
   data () {
     return {
       swiperOption: {
