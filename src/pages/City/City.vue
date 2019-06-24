@@ -8,8 +8,8 @@
       </ul>
     </div>
     <city-search></city-search>
-    <city-list :hotCities="hotCities" :cities="cities"></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
+    <city-list :hotCities="hotCities" :cities="cities" :letter="letter"></city-list>
+    <city-alphabet :cities="cities" @change="hanleLetteChange"></city-alphabet>
   </div>
 </template>
 
@@ -31,7 +31,8 @@ export default {
     return {
       isActive: 1,
       hotCities: [],
-      cities: []
+      cities: [],
+      letter: ''
     }
   },
   mounted () {
@@ -50,6 +51,9 @@ export default {
           that.cities = res.data.cities
         }
       })
+    },
+    hanleLetteChange (letter) {
+      this.letter = letter
     }
   }
 }
