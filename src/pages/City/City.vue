@@ -7,7 +7,7 @@
         <li :class="{ active: isActive==2 }" class="tab-item" @click="cityType(2)">国际城市</li>
       </ul>
     </div>
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <city-list :hotCities="hotCities" :cities="cities" :letter="letter"></city-list>
     <city-alphabet :cities="cities" @change="hanleLetteChange"></city-alphabet>
   </div>
