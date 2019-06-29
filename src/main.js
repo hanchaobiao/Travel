@@ -6,6 +6,8 @@ import router from './router'
 import fastClike from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
+// 默认引用index.js
+import store from './store'
 import 'swiper/dist/css/swiper.css'
 
 // 简写路径，在webpack 里配置了 styles 路径别名
@@ -25,6 +27,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store, // 引用vuex
   components: { App },
   template: '<App/>'
 })

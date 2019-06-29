@@ -5,7 +5,8 @@
     </div>
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
-        <li class="search-item border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+        <li class="search-item border-bottom" v-for="item in list" :key="item.id"
+            @click="handleCityClick(item.name)">{{item.name}}</li>
         <li class="search-item border-bottom" v-show="this.list.length == 0">未找到匹配数据</li>
       </ul>
     </div>
@@ -14,6 +15,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import {mapMutations} from 'vuex'
 export default {
   name: 'Search',
   props: ['cities'],
@@ -29,8 +31,18 @@ export default {
     this.$nextTick(() => {
       // console.log(this.$refs.wrapper)
       // this.scroll = new BScroll(this.$refs.wrapper)
-      setTimeout(() => { this.scroll = new BScroll(this.$refs.search, {}) }, 200) // 防止滑动失效
+      setTimeout(() => { this.scroll = new BScroll(this.$refs.search, { mouseWheel: true, click: true, tap: true }) }, 200) // 防止滑动失效
     })
+  },
+  methods: {
+    ...mapMutations(['changeCity']),
+    handleCityClick (city) {
+      // this.$store.dispatch('changeCity', city) // 调用actions
+      // 一般不需要请求后端接口可以直接调mutations
+      // this.$store.commit('changeCity', city)
+      this.changeCity(city)
+      this.$router.push('/')
+    }
   },
   watch: { // 监听keyword
     keyword () {
