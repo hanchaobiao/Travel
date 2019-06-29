@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="title">
-      <div class="iconfont header-back">&#xe624;</div>
+      <div class="iconfont header-back" @click="back">&#xe624;</div>
       城市选择
     </div>
   </div>
@@ -9,7 +9,12 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    back () {
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 

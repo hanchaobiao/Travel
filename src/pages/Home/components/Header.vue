@@ -1,9 +1,9 @@
 <template>
   <div class="header">
-    <div class="header-left"><div class="iconfont back-icon">&#xe624;</div></div>
+    <div class="header-left" @click="back"><div class="iconfont back-icon">&#xe624;</div></div>
     <div class="header-input"><span class="iconfont">&#xe632;</span>&nbsp;输入城市/景点/游玩主题</div>
     <router-link to="/city">
-      <div class="header-right">{{this.city}}<span class="iconfont arrow-icon">&#xe64a;</span></div>
+      <div class="header-right">{{this.currentCity}}<span class="iconfont arrow-icon">&#xe64a;</span></div>
     </router-link>
   </div>
 </template>
@@ -18,6 +18,11 @@ export default {
       currentCity: 'city'
     }),
     ...mapGetters(['doubleCity'])
+  },
+  methods: {
+    back () {
+      this.$router.go(-1)
+    }
   }
 }
 </script>
