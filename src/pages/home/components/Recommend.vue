@@ -2,14 +2,16 @@
   <div class="recommend-container">
     <div class="title">猜你喜欢</div>
     <ul>
-      <li class="item border-bottom" v-for="(item, index) of recommendList" :key="item.id" :index="index">
+      <!-- tag=li 该标签不会被渲染成a标签 而实li标签     -->
+      <router-link tag="li" :to="'/detail/'+item.id"
+        class="item border-bottom" v-for="(item, index) of recommendList" :key="item.id" :index="index">
         <img class="item-img" :src="item.imgUrl"/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
           <button class="item-button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
     <div class="more">查看所有产品</div>
   </div>
