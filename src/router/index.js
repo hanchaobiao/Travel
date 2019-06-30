@@ -23,5 +23,9 @@ export default new Router({
       name: 'detail',
       component: Detail
     }
-  ]
+  ],
+  // 进入新路由，设置位置在顶点
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
