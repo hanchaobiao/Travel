@@ -23,6 +23,11 @@ fastClike.attach(document.body)
 
 Vue.use(VueAwesomeSwiper)
 
+// 解决vue跳转界面不在顶部的问题
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
